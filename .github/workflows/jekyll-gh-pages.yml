@@ -37,11 +37,13 @@ jobs:
         run: npm install
       - name: Build Angular App
         run: npm run build
+      - name: Copy index.html to root
+        run: cp dist/lesson-plan-ng/browser/index.html dist/lesson-plan-ng/
       - name: List dist folder contents
         run: ls -R dist
       - name: Deploy to gh pages
         run: |
-         npx angular-cli-ghpages --dir=dist/lesson-plan-ng/browser/
+         npx angular-cli-ghpages --dir=dist/lesson-plan-ng
         env:
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
