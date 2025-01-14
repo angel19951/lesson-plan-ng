@@ -41,7 +41,7 @@ jobs:
         run: ls -R dist
       - name: Deploy to gh pages
         run: |
-         npx angular-cli-ghpages --dir=dist/lesson-plan-ng
+         npx angular-cli-ghpages --dir=dist/lesson-plan-ng/browser
         env:
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
