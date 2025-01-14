@@ -36,7 +36,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
       - name: Build Angular App
-        run: ng build --configuration=production
+        run: npm run build
       - name: List dist folder contents
         run: ls -R dist
       - name: Deploy to gh pages
